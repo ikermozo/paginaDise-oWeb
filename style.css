@@ -1,9 +1,9 @@
 /* ===== COLORES =====
-   - Principal: #2C3E50 Azul oscuro
-   - Secundario: #3498DB Azul claro
-   - Acento: #E74C3C Rojo claro
-   - Fondo: #ECF0F1 Gris claro
-   - Texto: #2C3E50
+- Principal: #2C3E50 Azul oscuro
+- Secundario: #3498DB Azul claro
+- Acento: #E74C3C Rojo claro
+- Fondo: #ECF0F1 Gris claro
+- Texto: #2C3E50
 */
 
 * {
@@ -106,12 +106,12 @@ article p {
     justify-content: center;
     
     /* align-items: stretch; Hace que todas las tarjetas tengan la misma altura
-       stretch (default): estira los items para llenar el contenedor verticalmente
+        stretch (default): estira los items para llenar el contenedor verticalmente
        Otras opciones: flex-start (arriba), flex-end (abajo), center (centro vertical) */
     align-items: stretch;
     
     /* flex-wrap: wrap; Permite que las tarjetas se envuelvan a la siguiente línea si no caben
-       nowrap (default): todos los items en una línea
+        nowrap (default): todos los items en una línea
        wrap: los items se envuelven en múltiples líneas si es necesario */
     flex-wrap: wrap;
     
@@ -126,9 +126,9 @@ article p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     
     /* flex: 1 1 300px; Shorthand para flex-grow, flex-shrink y flex-basis
-       - flex-grow: 1 Puede crecer para ocupar espacio disponible
-       - flex-shrink: 1 Puede encogerse si no hay espacio
-       - flex-basis: 300px Tamaño base de 300px antes de crecer/encogerse */
+    - flex-grow: 1 Puede crecer para ocupar espacio disponible
+    - flex-shrink: 1 Puede encogerse si no hay espacio
+    - flex-basis: 300px Tamaño base de 300px antes de crecer/encogerse */
     flex: 1 1 300px;
     
     max-width: 400px;
