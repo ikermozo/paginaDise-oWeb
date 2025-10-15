@@ -1,9 +1,17 @@
 /* ===== COLORES =====
-   - Principal: #2C3E50 Azul oscuro
-   - Secundario: #3498DB Azul claro
-   - Acento: #E74C3C Rojo claro
+   - Principal: #003366  Azul oscuro
+   - Apoyo 1: #5A6C7D Gris
+   - Apoyo 2: #D4AF37 Dorado -- Se usará con moderación (máximo 10% de la composición) para mantener la seriedad.
+   - Complementario: #FFFFFF Blanco
+   - 2 Complementario: #F5F7F9 Gris Claro
    - Fondo: #ECF0F1 Gris claro
    - Texto: #2C3E50
+
+   ===== TIPOGRAFIA =====
+   Titulares:
+   - Montserrat(Bold/SemiBold)
+   Texto de Cuerpo:
+   - Open Sans(Regular/Light)
 */
 
 * {
@@ -13,37 +21,39 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #ECF0F1;
+    font-family: 'Open Sans', Light;
+    font-weight: 300;
+    background-color: #F5F7F9;
     color: #2C3E50;
     line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
 header {
-    background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+    background:  #003366 ;
     color: white;
-    padding: 2rem 1rem;
-    text-align: center;
+    padding: 1.5rem 3rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Flexbox para alinear logo y navegación horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 2px;
-}
-
-header p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size:  2rem;
+    letter-spacing: 3px;
+    padding: 0.5rem 1.5rem;
+  
 }
 
 /* ===== NAVEGACIÓN CON FLEXBOX ===== */
 nav ul {
+    font-family: 'Open Sans', Light;
+    font-weight: 400;
     /* display: flex; → Activa Flexbox en el contenedor
        Los elementos <li> se convierten en flex items y se alinean horizontalmente */
     display: flex;
@@ -68,7 +78,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(212, 175, 55, 0.3);
     transform: translateY(-2px);
 }
 
@@ -84,16 +94,18 @@ article, section {
 }
 
 article h2, section h2 {
-    color: #2C3E50;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #003366;
     font-size: 2rem;
     margin-bottom: 1rem;
-    border-left: 5px solid #3498DB;
+    border-left: 5px solid #D4AF37;
     padding-left: 1rem;
 }
 
 article p {
     font-size: 1.1rem;
-    color: #34495E;
+    color: #2C3E50;
     line-height: 1.8;
 }
 
@@ -112,7 +124,7 @@ article p {
     
     /* flex-wrap: wrap; Permite que las tarjetas se envuelvan a la siguiente línea si no caben
        nowrap (default): todos los items en una línea
-       wrap: los items se envuelven en múltiples líneas si es necesario */
+       wrap: los items se envuelvan en múltiples líneas si es necesario */
     flex-wrap: wrap;
     
     /* gap: 2rem; Espacio entre tarjetas (horizontal y vertical) */
@@ -141,18 +153,20 @@ article p {
 
 .tarjeta:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(52, 152, 219, 0.3);
-    border: 2px solid #3498DB;
+    box-shadow: 0 12px 24px rgba(44, 95, 124, 0.3);
+    border: 2px solid #003366;
 }
 
 .tarjeta h3 {
-    color: #3498DB;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #003366;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .tarjeta p {
-    color: #7F8C8D;
+    color: #5A6C7D;
     margin-bottom: 1rem;
     flex-grow: 1; /* Hace que el párrafo ocupe el espacio disponible */
 }
@@ -164,14 +178,14 @@ article p {
 
 .tarjeta ul li {
     padding: 0.5rem 0;
-    color: #34495E;
+    color: #003366;
     position: relative;
     padding-left: 1.5rem;
 }
 
 .tarjeta ul li::before {
     content: "✓";
-    color: #3498DB;
+    color: #D4AF37;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -192,16 +206,16 @@ article p {
 #proceso ol li {
     margin-bottom: 1rem;
     font-size: 1.05rem;
-    color: #34495E;
+    color: #003366;
 }
 
 #proceso ol li strong {
-    color: #3498DB;
+    color: #003366;
 }
 
 /* ===== FOOTER CON FLEXBOX ===== */
 footer {
-    background-color: #2C3E50;
+    background-color: #003366;
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -229,6 +243,12 @@ footer small {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
     header h1 {
         font-size: 2rem;
     }
@@ -247,5 +267,211 @@ footer small {
     
     .tarjeta {
         max-width: 100%;
+    }
+}
+
+/*===== Contacto =====*/
+.contacto-container {
+    background-color: white;
+    padding: 30px;              
+    margin: 20px 0;            
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.contacto-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.formulario-seccion {
+    float: left;
+    width: 48%;
+    padding: 20px;
+    margin: 10px 1%;
+}
+
+.mapa-seccion {
+    float: right;
+    width: 48%;
+    padding: 20px;
+    margin: 10px 1%;
+}
+
+.clear {
+    clear: both;
+}
+
+/*Estilos del formulario*/
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #003366;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #333;
+}
+
+/*Estilo mapa*/
+
+.mapa-seccion h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+.mapa-seccion iframe {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/*Datos de contacto*/
+
+.datos-contacto {
+    background-color: white;
+    padding: 30px;
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.datos-contacto h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/*Tabla*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+thead {
+    background-color: #003366;
+    color: white;
+}
+
+th {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+tfoot {
+    background-color: #f5f5f5;
+    font-weight: 400;
+}
+/*Respponsive-Contactos*/
+@media (max-width: 768px) {
+    .formulario-seccion,
+    .mapa-seccion {
+        float: none;
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+    
+    .mapa-seccion iframe {
+        height: 300px;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 8px;
     }
 }
