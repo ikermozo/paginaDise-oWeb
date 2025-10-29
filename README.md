@@ -5,9 +5,9 @@ Landing page profesional para asesoría inmobiliaria especializada en compra, ve
 ## Demo en Vivo
 
 **Versión publicada:** Bootstrap  
-🔗 [Ver sitio web](https://TU-USUARIO.github.io/TU-REPOSITORIO)
+🔗 [Ver sitio web]( https://ikermozo.github.io/paginaDisenoWeb/)
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 
 Momentum es una landing page diseñada para generar confianza y conversión en clientes potenciales que buscan asesoramiento inmobiliario profesional. El sitio presenta servicios, proceso de trabajo transparente y testimonios reales.
 
@@ -19,7 +19,7 @@ Momentum es una landing page diseñada para generar confianza y conversión en c
 ### Objetivo Principal
 Conseguir que el visitante solicite una **consulta gratuita** después de conocer los servicios y generar confianza a través de testimonios y transparencia en el proceso.
 
-## 🎨 Diseño y Estilo
+## Diseño y Estilo
 
 ### Paleta de Colores
 - **Principal:** #003366 (Azul oscuro) - Confianza y profesionalidad
@@ -39,7 +39,7 @@ Conseguir que el visitante solicite una **consulta gratuita** después de conoce
 ✓ Transparencia  
 ✓ Cercanía  
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 ### Versión Publicada: Bootstrap 5.3.2
 - **HTML5** semántico
@@ -77,7 +77,7 @@ git checkout version-bootstrap # Ver versión Bootstrap
 git checkout main              # Volver a la rama principal
 ```
 
-## 📱 Secciones de la Landing Page
+## Secciones de la Landing Page
 
 1. **Header/Navegación**
    - Logo MOMENTUM
@@ -118,21 +118,18 @@ git checkout main              # Volver a la rama principal
 ### Configuración actual:
 - **Rama publicada:** `main`
 - **Versión mostrada:** Bootstrap
-- **URL:** https://TU-USUARIO.github.io/TU-REPOSITORIO
+- **URL:**  https://ikermozo.github.io/paginaDisenoWeb/
 
 ### Cómo se desplegó:
 1. Se hizo merge de `version-bootstrap` → `main`
 2. En GitHub: Settings → Pages → Source: `main` → Save
 3. GitHub Pages genera automáticamente el sitio
 
-## 💻 Instalación Local
+## Instalación Local
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/TU-USUARIO/TU-REPOSITORIO.git
-
-# Entrar al directorio
-cd TU-REPOSITORIO
+git clone  https://ikermozo.github.io/paginaDisenoWeb/
 
 # Abrir con navegador
 # Opción 1: Abrir index.html directamente
@@ -144,7 +141,7 @@ npx serve
 
 Luego visita: `http://localhost:8000`
 
-## 📊 Comparación de Versiones
+## Comparación de Versiones
 
 ### ¿Por qué Bootstrap?
 
@@ -192,7 +189,7 @@ Luego visita: `http://localhost:8000`
 - Pull Requests y documentación
 - Despliegue con GitHub Pages
 
-## 📝 Notas Técnicas
+## Notas Técnicas
 
 ### Responsive Breakpoints
 ```css
@@ -210,7 +207,7 @@ Luego visita: `http://localhost:8000`
 - CSS crítico inline en algunas secciones
 - Minificación de Bootstrap vía CDN
 
-## 👨‍💻 Autor
+## Autor
 
 **Iker  Mozo**  
 Proyecto realizado para el módulo de Diseño de Interfaces Web  
