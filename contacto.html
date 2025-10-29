@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum - Asesoría Inmobiliaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>MOMENTUM</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contacto-container">
+            <div class="formulario-seccion">
+                <h2>Ponte en contacto con nosotros</h2>
+                
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Pedro" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Pérez" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Dirección de correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="email@pedrofakedomain.net" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Tu mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Introduce mensaje"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                </form>
+            </div>
+            
+            <div class="mapa-seccion">
+                <h3>Nuestra ubicación</h3>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95777.49581430338!2d-3.7649908!3d40.4167754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1234567890123!5m2!1ses!2ses" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de ubicación de Momentum">
+                    </iframe>
+            </div>
+            <div class="clear"></div>
+        </section>
+        
+        <section class="datos-contacto">
+            <h2>Datos de contacto</h2>
+            
+            <table>
+                <caption>Información de contacto y horarios de atención de Momentum</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Tipo de información</th>
+                        <th scope="col">Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Teléfono</th>
+                        <td>+34 XXX XXX XXX</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>info@momentum.com</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Dirección</th>
+                        <td>[dirección]</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Horario</th>
+                        <td>Lunes a Viernes, 9:00 - 18:00h</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Redes Sociales</th>
+                        <td>Síguenos en LinkedIn y Facebook</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <p>¿Buscas comprar, vender o alquilar? ¡Contáctanos!</p>
+        <small>&copy; 2025 · Ilerna</small>
+    </footer>
+</body>
+</html>
