@@ -239,8 +239,6 @@ Para este proyecto he adoptado la estrategia de diseño **Mobile-First**
 
 ## Breakpoints Implementados
 
-Hemos definido los siguientes puntos de ruptura (*breakpoints*) para adaptar el diseño a diferentes dispositivos:
-
 | Dispositivo | Rango de Resolución | Media Query |
 |-------------|---------------------|-------------|
 | ** Móviles** | 0px - 480px | Estilos base (sin media query) |
