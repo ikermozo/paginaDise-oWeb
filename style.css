@@ -1,174 +1,264 @@
-/* ===== COLORES =====
-   - Principal: #003366  Azul oscuro
-   - Apoyo 1: #5A6C7D Gris
-   - Apoyo 2: #D4AF37 Dorado -- Se usará con moderación (máximo 10% de la composición) para mantener la seriedad.
-   - Complementario: #FFFFFF Blanco
-   - 2 Complementario: #F5F7F9 Gris Claro
-   - Fondo: #ECF0F1 Gris claro
-   - Texto: #2C3E50
-
-   ===== TIPOGRAFIA =====
-   Titulares:
-   - Montserrat(Bold/SemiBold)
-   Texto de Cuerpo:
-   - Open Sans(Regular/Light)
+/* ===== VARIABLES CSS =====
+   Colores del proyecto Momentum
 */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --color-principal: #003366;
+    --color-apoyo-1: #5A6C7D;
+    --color-dorado: #D4AF37;
+    --color-blanco: #FFFFFF;
+    --color-gris-claro: #F5F7F9;
+    --color-fondo: #ECF0F1;
+    --color-texto: #2C3E50;
 }
 
+/* ===== ESTILOS BASE (MÓVIL) ===== */
 body {
-    font-family: 'Open Sans', Light;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    background-color: #F5F7F9;
-    color: #2C3E50;
-    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-gris-claro);
 }
 
-/* ===== HEADER ===== */
-header {
-    background:  #003366 ;
-    color: white;
-    padding: 1.5rem 3rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
-    /* Flexbox para alinear logo y navegación horizontalmente */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size:  2rem;
-    letter-spacing: 3px;
-    padding: 0.5rem 1.5rem;
-  
-}
-
-/* ===== NAVEGACIÓN CON FLEXBOX ===== */
-nav ul {
-    font-family: 'Open Sans', Light;
-    font-weight: 400;
-    /* display: flex; → Activa Flexbox en el contenedor
-       Los elementos <li> se convierten en flex items y se alinean horizontalmente */
-    display: flex;
-    
-    /* justify-content: center; → Alinea los items horizontalmente en el CENTRO del contenedor
-       Otras opciones: flex-start (inicio), flex-end (final), space-between (espacio entre items), space-around (espacio alrededor) */
-    justify-content: center;
-    
-    /* gap: 2rem; → Espacio entre los flex items (más moderno que usar margins) */
-    gap: 2rem;
-    
-    list-style: none;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 400;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: rgba(212, 175, 55, 0.3);
-    transform: translateY(-2px);
-}
-
-/* ===== MAIN ===== */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-article, section {
-    margin-bottom: 3rem;
-}
-
-article h2, section h2 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    color: #003366;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    border-left: 5px solid #D4AF37;
-    padding-left: 1rem;
 }
 
-article p {
-    font-size: 1.1rem;
-    color: #2C3E50;
-    line-height: 1.8;
-}
-
-/* ===== TARJETAS CON FLEXBOX ===== */
-.tarjetas {
-    /* display: flex; Convierte el contenedor en flex container */
-    display: flex;
-    
-    /* justify-content: center; Centra las tarjetas horizontalmente en el contenedor */
-    justify-content: center;
-    
-    /* align-items: stretch; Hace que todas las tarjetas tengan la misma altura
-       stretch (default): estira los items para llenar el contenedor verticalmente
-       Otras opciones: flex-start (arriba), flex-end (abajo), center (centro vertical) */
-    align-items: stretch;
-    
-    /* flex-wrap: wrap; Permite que las tarjetas se envuelvan a la siguiente línea si no caben
-       nowrap (default): todos los items en una línea
-       wrap: los items se envuelvan en múltiples líneas si es necesario */
-    flex-wrap: wrap;
-    
-    /* gap: 2rem; Espacio entre tarjetas (horizontal y vertical) */
-    gap: 2rem;
-}
-
-.tarjeta {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
+/* ===== NAVBAR (MÓVIL) ===== */
+.navbar {
+    background-color: var(--color-principal) !important;
+    padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
-    /* flex: 1 1 300px; Shorthand para flex-grow, flex-shrink y flex-basis
-       - flex-grow: 1 Puede crecer para ocupar espacio disponible
-       - flex-shrink: 1 Puede encogerse si no hay espacio
-       - flex-basis: 300px Tamaño base de 300px antes de crecer/encogerse */
-    flex: 1 1 300px;
-    
-    max-width: 400px;
-    transition: all 0.3s ease;
-    
-    /* display: flex; flex-direction: column; Hace que el contenido se organice en vertical */
+    position: relative;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: white !important;
+}
+
+/* Menú hamburguesa para móvil */
+.hamburger {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger:focus {
+    outline: none;
+}
+
+.hamburger-line {
+    width: 2rem;
+    height: 0.25rem;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+/* Contenedor del menú de navegación en móvil */
+.navbar-nav-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-principal);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    z-index: 9;
+}
+
+.navbar-nav-container.active {
+    display: flex;
+}
+
+.navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 400;
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background-color: rgba(212, 175, 55, 0.3);
+}
+
+/* ===== TÍTULOS DE SECCIÓN (MÓVIL) ===== */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--color-principal);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--color-dorado);
+    padding-left: 0.75rem;
+}
+
+/* ===== BOTONES CTA (MÓVIL) ===== */
+.btn-cta {
+    background-color: var(--color-dorado);
+    color: var(--color-principal);
+    padding: 0.75rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-cta:hover {
+    background-color: var(--color-blanco);
+    color: var(--color-principal);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+/* ===== FOOTER (MÓVIL) ===== */
+footer {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.footer-seccion {
+    margin-bottom: 2rem;
+}
+
+.footer-seccion h5 {
+    color: var(--color-dorado);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-seccion a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-seccion a:hover {
+    color: var(--color-dorado);
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--color-dorado);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ===== HERO SECTION (MÓVIL) ===== */
+.hero {
+    background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(90, 108, 125, 0.85)), 
+                url('https://img.freepik.com/fotos-premium/casa-moderna-lujo-florida-amplia-sala-estar-gran-television-paredes-blancas-ventanas-panoramicas-vistas-piscina_1275033-1450.jpg?semt=ais_hybrid&w=740&q=80') center/cover;
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    min-height: 350px;
+}
+
+.hero h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+/* ===== TARJETAS (MÓVIL) ===== */
+.tarjeta {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 2px solid transparent;
+    margin-bottom: 1.5rem;
 }
 
 .tarjeta:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(44, 95, 124, 0.3);
-    border: 2px solid #003366;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(44, 95, 124, 0.3);
+    border-color: var(--color-principal);
 }
 
 .tarjeta h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #003366;
-    font-size: 1.5rem;
+    color: var(--color-principal);
+    font-size: 1.3rem;
     margin-bottom: 1rem;
 }
 
 .tarjeta p {
-    color: #5A6C7D;
+    color: var(--color-apoyo-1);
     margin-bottom: 1rem;
-    flex-grow: 1; /* Hace que el párrafo ocupe el espacio disponible */
+    font-size: 0.95rem;
 }
 
 .tarjeta ul {
@@ -178,241 +268,196 @@ article p {
 
 .tarjeta ul li {
     padding: 0.5rem 0;
-    color: #003366;
+    color: var(--color-principal);
     position: relative;
     padding-left: 1.5rem;
+    font-size: 0.95rem;
 }
 
 .tarjeta ul li::before {
     content: "✓";
-    color: #D4AF37;
+    color: var(--color-dorado);
     font-weight: bold;
     position: absolute;
     left: 0;
 }
 
-/* ===== PROCESO DE TRABAJO ===== */
+/* ===== PROCESO (MÓVIL) ===== */
 #proceso {
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 #proceso ol {
-    padding-left: 2rem;
+    padding-left: 1.5rem;
 }
 
 #proceso ol li {
     margin-bottom: 1rem;
-    font-size: 1.05rem;
-    color: #003366;
+    font-size: 0.95rem;
+    color: var(--color-principal);
 }
 
 #proceso ol li strong {
-    color: #003366;
+    color: var(--color-principal);
 }
 
-/* ===== FOOTER CON FLEXBOX ===== */
-footer {
-    background-color: #003366;
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    
-    /* display: flex; flex-direction: column;  Organiza el contenido verticalmente */
-    display: flex;
-    flex-direction: column;
-    
-    /* align-items: center; Centra el contenido horizontalmente */
-    align-items: center;
-    
-    /* gap: 1rem;  Espacio entre los elementos del footer */
-    gap: 1rem;
-}
-
-footer p {
-    font-size: 1.1rem;
-    font-weight: 300;
-}
-
-footer small {
-    opacity: 0.7;
-    font-size: 0.9rem;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    nav ul {
-        /* flex-direction: column; Cambia la dirección de horizontal a vertical en móviles */
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .tarjetas {
-        /* flex-direction: column; Apila las tarjetas verticalmente en pantallas pequeñas */
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .tarjeta {
-        max-width: 100%;
-    }
-}
-
-/*===== Contacto =====*/
-.contacto-container {
+/* ===== TESTIMONIOS (MÓVIL) ===== */
+.testimonios {
     background-color: white;
-    padding: 30px;              
-    margin: 20px 0;            
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 12px;
 }
 
-.contacto-container h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #333;
+.testimonio {
+    background-color: var(--color-gris-claro);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--color-dorado);
+    height: 100%;
+    margin-bottom: 1.5rem;
 }
 
-.formulario-seccion {
-    float: left;
-    width: 48%;
-    padding: 20px;
-    margin: 10px 1%;
+.testimonio-texto {
+    font-style: italic;
+    color: var(--color-apoyo-1);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
 }
 
-.mapa-seccion {
-    float: right;
-    width: 48%;
-    padding: 20px;
-    margin: 10px 1%;
+.testimonio-autor {
+    font-weight: 600;
+    color: var(--color-principal);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
 }
 
-.clear {
-    clear: both;
+.testimonio-rol {
+    font-size: 0.85rem;
+    color: var(--color-apoyo-1);
 }
 
-/*Estilos del formulario*/
-.form-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
+/* ===== CTA SECTION (MÓVIL) ===== */
+.cta-section {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    margin: 2rem 0;
 }
 
-.form-group {
-    flex: 1;
-    margin-bottom: 15px;
+.cta-section h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #333;
-    font-family: 'Open Sans', sans-serif;
+.cta-section p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== FORMULARIO (MÓVIL) ===== */
+.contacto-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.form-label {
     font-weight: 400;
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
+.form-control {
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
+    padding: 0.75rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #003366;
+.form-control:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 0.2rem rgba(0, 51, 102, 0.1);
 }
 
 .btn-enviar {
-    width: 100%;
-    padding: 12px;
-    background-color: #000;
+    background-color: var(--color-principal);
     color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 0.75rem 2rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .btn-enviar:hover {
-    background-color: #333;
+    background-color: var(--color-dorado);
+    color: var(--color-principal);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
-/*Estilo mapa*/
-
-.mapa-seccion h3 {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 15px;
-    font-size: 20px;
-    color: #333;
+/* ===== MAPA (MÓVIL) ===== */
+.mapa-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    margin-bottom: 2rem;
 }
 
-.mapa-seccion iframe {
+.mapa-container iframe {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    height: 300px;
+    border: 0;
 }
 
-/*Datos de contacto*/
-
-.datos-contacto {
-    background-color: white;
-    padding: 30px;
-    margin: 20px 0;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+/* ===== TABLA (MÓVIL) ===== */
+.tabla-contacto {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    overflow-x: auto;
 }
-
-.datos-contacto h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/*Tabla*/
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 1rem;
+    font-size: 0.85rem;
 }
 
 caption {
     caption-side: top;
     text-align: left;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: var(--color-apoyo-1);
+    margin-bottom: 1rem;
     font-style: italic;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
 }
 
 thead {
-    background-color: #003366;
+    background-color: var(--color-principal);
     color: white;
 }
 
@@ -422,19 +467,17 @@ th {
 }
 
 th, td {
-    padding: 12px;
+    padding: 0.75rem 0.5rem;
     text-align: left;
     border: 1px solid #ddd;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: var(--color-gris-claro);
 }
 
 tbody tr:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(212, 175, 55, 0.1);
     transition: background-color 0.2s;
 }
 
@@ -442,36 +485,246 @@ tfoot {
     background-color: #f5f5f5;
     font-weight: 400;
 }
-/*Respponsive-Contactos*/
-@media (max-width: 768px) {
-    .formulario-seccion,
-    .mapa-seccion {
-        float: none;
-        width: 100%;
-        margin: 10px 0;
-        padding: 10px;
+
+
+/* ============================================== */
+/* ===== MEDIA QUERIES: TABLETAS (481px+) ===== */
+/* ============================================== */
+@media (min-width: 481px) {
+    /* Hero */
+    .hero h2 {
+        font-size: 2.5rem;
     }
-    
-    .mapa-seccion iframe {
-        height: 300px;
+
+    .hero-subtitle {
+        font-size: 1.2rem;
     }
-    
-    header {
-        flex-direction: column;
-        gap: 15px;
+
+    /* Botones CTA */
+    .btn-cta {
+        width: auto;
+        padding: 0.85rem 2rem;
     }
-    
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+
+    /* Footer */
+    footer {
+        padding: 2.5rem 2rem;
     }
-    
+
+    /* Formulario */
+    .contacto-card {
+        padding: 2rem;
+    }
+
+    /* Tabla */
     table {
-        font-size: 14px;
+        font-size: 0.9rem;
     }
-    
+
     th, td {
-        padding: 8px;
+        padding: 0.85rem 0.75rem;
+    }
+
+    /* Mapa */
+    .mapa-container iframe {
+        height: 400px;
+    }
+}
+
+
+/* ================================================ */
+/* ===== MEDIA QUERIES: ESCRITORIO (769px+) ===== */
+/* ================================================ */
+@media (min-width: 769px) {
+    
+    /* ===== NAVBAR (ESCRITORIO) ===== */
+    .navbar {
+        padding: 1.5rem 3rem;
+    }
+
+    .navbar-brand {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    /* Ocultar hamburguesa en escritorio */
+    .hamburger {
+        display: none;
+    }
+
+    /* Mostrar menú de navegación en línea */
+    .navbar-nav-container {
+        display: flex !important;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        flex-direction: row;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        width: auto;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        transform: translateY(-2px);
+    }
+
+    /* ===== TÍTULOS DE SECCIÓN (ESCRITORIO) ===== */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        border-left-width: 5px;
+        padding-left: 1rem;
+    }
+
+    /* ===== BOTONES CTA (ESCRITORIO) ===== */
+    .btn-cta {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* ===== FOOTER (ESCRITORIO) ===== */
+    footer {
+        padding: 3rem 2rem 2rem 2rem;
+    }
+
+    .footer-seccion {
+        margin-bottom: 0;
+    }
+
+    .footer-bottom {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+
+    /* ===== HERO (ESCRITORIO) ===== */
+    .hero {
+        padding: 6rem 2rem;
+        min-height: 500px;
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    /* ===== TARJETAS (ESCRITORIO) ===== */
+    .tarjeta {
+        padding: 2rem;
+        margin-bottom: 0;
+    }
+
+    .tarjeta:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(44, 95, 124, 0.3);
+    }
+
+    .tarjeta h3 {
+        font-size: 1.5rem;
+    }
+
+    .tarjeta p,
+    .tarjeta ul li {
+        font-size: 1rem;
+    }
+
+    /* ===== PROCESO (ESCRITORIO) ===== */
+    #proceso {
+        padding: 2rem;
+    }
+
+    #proceso ol {
+        padding-left: 2rem;
+    }
+
+    #proceso ol li {
+        font-size: 1.05rem;
+    }
+
+    /* ===== TESTIMONIOS (ESCRITORIO) ===== */
+    .testimonios {
+        padding: 3rem 2rem;
+        margin: 3rem 0;
+    }
+
+    .testimonio {
+        padding: 2rem;
+        margin-bottom: 0;
+    }
+
+    .testimonio-texto {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonio-autor {
+        font-size: 1.05rem;
+    }
+
+    .testimonio-rol {
+        font-size: 0.9rem;
+    }
+
+    /* ===== CTA SECTION (ESCRITORIO) ===== */
+    .cta-section {
+        padding: 4rem 2rem;
+        margin: 3rem 0;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-section p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* ===== FORMULARIO (ESCRITORIO) ===== */
+    .contacto-card {
+        padding: 2.5rem;
+    }
+
+    .form-label {
+        font-size: 1rem;
+    }
+
+    /* ===== MAPA (ESCRITORIO) ===== */
+    .mapa-container iframe {
+        height: 450px;
+    }
+
+    /* ===== TABLA (ESCRITORIO) ===== */
+    .tabla-contacto {
+        padding: 2.5rem;
+    }
+
+    table {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    caption {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 1rem;
     }
 }

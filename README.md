@@ -207,6 +207,85 @@ Luego visita: `http://localhost:8000`
 - CSS crítico inline en algunas secciones
 - Minificación de Bootstrap vía CDN
 
+# Práctica 5 – Media Queries y Diseño Responsive
+
+## Estrategia de Diseño: Mobile-First
+
+Para este proyecto he adoptado la estrategia de diseño **Mobile-First**
+
+### Justificación de la elección
+
+1. **Mejor Rendimiento en Dispositivos Móviles**
+   - Los dispositivos móviles cargan primero el CSS esencial y más ligero, optimizado para pantallas pequeñas.
+   - El CSS adicional para pantallas más grandes se carga solo cuando es necesario, reduciendo el tiempo de carga inicial.
+   - Esto resulta en una experiencia de usuario más rápida y fluida en smartphones, que representan la mayoría del tráfico web actual.
+
+2. **Priorización del Contenido**
+   - Diseñar para la pantalla más pequeña primero nos obliga a identificar y priorizar el contenido más importante.
+   - Garantiza que la información esencial sea accesible en todos los dispositivos.
+   - Promueve un diseño más limpio y centrado en el usuario.
+
+3. **Código Más Limpio y Mantenible**
+   - La metodología Mobile-First se basa en la "mejora progresiva" (*progressive enhancement*).
+   - Se parte de una base simple y se añade complejidad de forma gradual.
+   - Evita la necesidad de sobrescribir múltiples estilos, reduciendo conflictos y redundancia en el código CSS.
+
+4. **Alineación con las Mejores Prácticas**
+   - Mobile-First es el estándar de la industria y la práctica recomendada por organizaciones como W3C y Google.
+   - Mejora el posicionamiento SEO, ya que Google utiliza indexación mobile-first.
+   - Prepara el proyecto para futuras actualizaciones y nuevas resoluciones de pantalla.
+
+---
+
+## Breakpoints Implementados
+
+Hemos definido los siguientes puntos de ruptura (*breakpoints*) para adaptar el diseño a diferentes dispositivos:
+
+| Dispositivo | Rango de Resolución | Media Query |
+|-------------|---------------------|-------------|
+| ** Móviles** | 0px - 480px | Estilos base (sin media query) |
+| ** Tablets** | 481px - 768px | `@media (min-width: 481px)` |
+| ** Escritorio** | 769px en adelante | `@media (min-width: 769px)` |
+
+### Navegación Hamburguesa
+
+Se ha implementado un menú hamburguesa responsive usando el componente navbar de Bootstrap:
+
+- **Breakpoint**: 992px (lg)
+- **Comportamiento móvil**: El menú se colapsa y aparece un icono ☰
+- **Interacción**: Al hacer clic en ☰, el menú se despliega verticalmente
+- **Accesibilidad**: Usa atributos ARIA y es navegable por teclado
+
+**Componentes Bootstrap usados:**
+- `navbar-toggler`: Botón hamburguesa
+- `collapse`: Sistema de colapso/despliegue
+- `navbar-expand-lg`: Control de breakpoint
+
+### Lógica de Implementación
+
+```css
+/* Estilos base para móvil (0px - 480px) */
+.elemento {
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+/* Tablets (481px+) */
+@media (min-width: 481px) {
+    .elemento {
+        font-size: 1.1rem;
+        padding: 1.25rem;
+    }
+}
+
+/* Escritorio (769px+) */
+@media (min-width: 769px) {
+    .elemento {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+    }
+}
+```
 ## Autor
 
 **Iker  Mozo**  
