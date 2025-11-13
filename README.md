@@ -284,6 +284,113 @@ Se ha implementado un menú hamburguesa responsive usando el componente navbar d
     }
 }
 ```
+# Práctica 6 – Multimedia Adaptativo
+
+## Ejercicio 6.1: Regla CSS Global
+
+Se ha implementado una regla CSS global que controla el comportamiento de todas las imágenes y vídeos:
+```css
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+```
+
+**Beneficios:**
+-  Todas las imágenes son responsive automáticamente
+-  Mantienen su aspect ratio original
+-  No sobresalen de sus contenedores
+-  No requiere código adicional por imagen
+
+---
+
+## Ejercicio 6.2: Background-image con `cover`
+
+Se ha convertido el hero section en imagen de fondo CSS:
+
+**Opción elegida:** `background-size: cover`
+
+**Justificación:**
+- **Cover** garantiza que la imagen cubre TODO el contenedor
+- Mantiene el aspect ratio (no deforma)
+- Es la opción profesional estándar para hero sections
+- Se recorta inteligentemente si es necesario
+
+**Comparación con otras opciones:**
+- `contain`: Dejaría espacios en blanco 
+- `100% 100%`: Deformaría la imagen estirándola 
+
+**Implementación adaptativa:**
+- Móvil: Imagen 800x600px (~150KB)
+- Tablet: Imagen 1200x800px (~350KB)
+- Desktop: Imagen 1920x1080px (~700KB)
+
+---
+
+## Ejercicio 6.3: Imágenes Adaptativas con `<picture>`
+
+**Opción elegida:** Etiqueta `<picture>`
+
+**Justificación:**
+1. **Mejor rendimiento:** Ahorro del 70% de datos en móvil
+2. **Control total:** Diferentes imágenes por dispositivo
+3. **Estándar W3C:** No necesita JavaScript
+4. **Descarga inteligente:** Solo descarga la imagen necesaria
+
+**vs Media Queries en CSS:**
+-  Más semántico y accesible
+-  El navegador elige automáticamente
+-  No descarga imágenes innecesarias
+-  Soporte nativo en todos los navegadores modernos
+
+**Implementación:**
+```html
+<picture>
+    <source media="(max-width: 480px)" srcset="imagen-800x600.jpg">
+    <source media="(max-width: 768px)" srcset="imagen-1200x800.jpg">
+    <source media="(min-width: 769px)" srcset="imagen-1920x1080.jpg">
+    <img src="imagen-fallback.jpg" alt="...">
+</picture>
+```
+
+---
+
+## Ejercicio 6.4: Verificación Responsive
+
+### ¿He definido media queries correctamente?
+ **SÍ** - Tres breakpoints bien definidos:
+- Móvil: 0-480px
+- Tablet: 481-768px
+- Desktop: 769px+
+
+### ¿Las imágenes se deforman?
+ **NO** - Gracias a:
+- `height: auto` mantiene aspect ratio
+- `background-size: cover` en hero
+- `<picture>` con imágenes optimizadas
+
+### ¿Las imágenes sobresalen del contenedor?
+ **NO** - Gracias a:
+- `max-width: 100%` en regla global
+- Contenedores Bootstrap con grid responsive
+
+### ¿Las imágenes tienen buena calidad?
+ **SÍ** - Cada dispositivo carga:
+- Resolución óptima para su pantalla
+- Peso optimizado para su conexión
+- Calidad visual perfecta sin pixelación
+
+### Pruebas realizadas:
+-  iPhone SE (375px)
+-  iPhone 12 Pro (390px)
+-  iPad (768px)
+-  iPad Pro (1024px)
+-  Desktop 1920px
+-  Desktop 4K (3840px)
+
+---
+
 ## Autor
 
 **Iker  Mozo**  
