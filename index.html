@@ -95,6 +95,63 @@
             </ol>
         </section>
 
+        <!-- ============================================ -->
+        <!-- EJERCICIO 6.3: Imagen adaptativa con <picture> -->
+        <!-- ============================================== -->
+        <!--
+            He elegido la etiqueta <picture>:
+            
+            1. MEJOR RENDIMIENTO:
+                - Carga imágenes optimizadas para cada dispositivo
+                - Móvil: 800x600px (~150KB)
+                - Tablet: 1200x800px (~350KB)
+                - Desktop: 1920x1080px (~700KB) -- Calidad completa
+            
+            2. CONTROL TOTAL DEL DISEÑO:
+                - No dependo de CSS (funciona aunque falle el CSS)
+                - El navegador decide automáticamente qué imagen descargar
+            
+            3. VENTAJAS vs MEDIA QUERIEs en CSS:
+                - <picture> es HTML nativo
+                - No necesita JavaScript adicional
+                - El navegador descarga SOLO la imagen necesaria(no todas)
+                
+            4. RESPONSIVE IMAGES ESTÁNDAR:
+                - Compatible con todos los navegadores modernos
+                - Incluye fallback para navegadores antiguos (<img>)
+        -->
+        <section class="my-5">
+            <h2 class="section-title">Nuestro Equipo Profesional</h2>
+            <div class="row">
+                <div class="col-12">
+                    <picture>
+                        <!-- Móvil: Imagen optimizada 800x600px (máx. 480px) -->
+                        <source 
+                            media="(max-width: 480px)" 
+                            srcset="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&q=80">
+                        
+                        <!-- Tablet: Imagen media 1200x800px (481px - 768px) -->
+                        <source 
+                            media="(max-width: 768px)" 
+                            srcset="https://static.grupojoly.com/clip/59b7e8fe-9d16-4d7f-8992-5b0c3bba9199_source-aspect-ratio_1600w_0.jpg">
+                        
+                        <!-- Desktop: Imagen completa 1920x1080px (769px+) -->
+                        <source 
+                            media="(min-width: 769px)" 
+                            srcset="https://www.creativasesores.com/images/easyblog_articles/69/crear-equipo-exitoso-recursos-humanos-sevilla.jpg">
+                        
+                        <!-- Para navegadores que no soportan <picture> (fallback) -->
+                        <img 
+                            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=800&fit=crop&q=80" 
+                            alt="Equipo profesional de Momentum asesorando a clientes en oficina moderna"
+                            loading="lazy"
+                            style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </picture>
+                </div>
+            </div>
+        </section>
+        <!-- FIN EJERCICIO 6.3 -->
+
         <section class="testimonios">
             <h2 class="section-title text-center">Lo que Dicen Nuestros Clientes</h2>
             <div class="row g-4">
