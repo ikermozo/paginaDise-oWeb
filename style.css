@@ -1,8 +1,8 @@
 /* ===== VARIABLES CSS =====
-   Colores del proyecto Momentum
+    Colores del proyecto Momentum
 */
 :root {
-    --color-principal: #003366;
+    --color-principal: #011f3e;
     --color-apoyo-1: #5A6C7D;
     --color-dorado: #D4AF37;
     --color-blanco: #FFFFFF;
@@ -10,6 +10,24 @@
     --color-fondo: #ECF0F1;
     --color-texto: #2C3E50;
 }
+/* ============================================== */
+/* EJERCICIO 6.1: Regla global para multimedia    */
+/* ============================================== */
+/* 
+    Esta regla asegura que todas las imágenes y vídeos se escalen correctamente
+    dentro de su contenedor sin deformarse ni sobresalir.
+    - max-width: 100%, la imagen o vídeo nunca superará el ancho del contenedor
+    - height: auto, mantiene la proporción original
+    - display: block,elimina el espacio extra inferior que tienen los inline elements
+*/
+img,video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* ============================================== */
+/* FIN EJERCICIO 6.1                              */
+/* ============================================== */
 
 /* ===== ESTILOS BASE (MÓVIL) ===== */
 body {
@@ -208,15 +226,48 @@ footer {
 }
 
 /* ===== HERO SECTION (MÓVIL) ===== */
+/* ============================================== */
+/* EJERCICIO 6.2: Hero Section con background-image */
+/* =============================================== */
+/*
+    He elegido background-size: cover
+
+    Es la mejor opción para hero sections porque:
+        - Garantiza que la imagen siempre cubre todo el contenedor
+        - No se deforma
+        - Se recorta inteligentemente si es necesario
+        - Ofrece una experiencia visual profesional en todos los dispositivos
+
+    Complementado con background-position: center se asegura que 
+        la parte más importante de la imagen siempre sea visible
+*/
 .hero {
-    background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(90, 108, 125, 0.85)), 
-                url('https://img.freepik.com/fotos-premium/casa-moderna-lujo-florida-amplia-sala-estar-gran-television-paredes-blancas-ventanas-panoramicas-vistas-piscina_1275033-1450.jpg?semt=ais_hybrid&w=740&q=80') center/cover;
+    /* Imagen de fondo adaptativa */
+    background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('https://img.freepik.com/fotos-premium/casa-moderna-lujo-florida-amplia-sala-estar-gran-television-paredes-blancas-ventanas-panoramicas-vistas-piscina_1275033-1450.jpg?semt=ais_hybrid&w=740&q=80');
+    
+    /* COVER: La imagen cubre todo el contenedor manteniendo proporciones */
+    background-size: cover;
+    
+    /* *Centra la imagen para que la parte más importante siempre se vea */
+    background-position: center;
+    
+    /* Fija la imagen al hacer scroll */
+    background-attachment: scroll;
+    
+    /* Evita que la imagen se repita si el contenedor es más grande */
+    background-repeat: no-repeat;
+    
     color: white;
     padding: 3rem 1.5rem;
     text-align: center;
     min-height: 350px;
+    
+    /* Asegura que el contenido sea legible sobre cualquier fondo */
+    position: relative;
 }
-
+/* ============================================== */
+/* FIN EJERCICIO 6.2                              */
+/* ============================================== */
 .hero h2 {
     font-weight: 700;
     font-size: 2rem;
@@ -491,7 +542,14 @@ tfoot {
 /* ===== MEDIA QUERIES: TABLETAS (481px+) ===== */
 /* ============================================== */
 @media (min-width: 481px) {
-    /* Hero */
+    /* EJERCICIO 6.2: Background adaptativo para tablet */
+    .hero {
+        background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('https://img.freepik.com/fotos-premium/casa-moderna-lujo-florida-amplia-sala-estar-gran-television-paredes-blancas-ventanas-panoramicas-vistas-piscina_1275033-1450.jpg?semt=ais_hybrid&w=740&q=80');
+        min-height: 400px;
+        padding: 4rem 2rem;
+    }
+    /* FIN EJERCICIO 6.2 para tablet */
+    
     .hero h2 {
         font-size: 2.5rem;
     }
@@ -536,7 +594,15 @@ tfoot {
 /* ===== MEDIA QUERIES: ESCRITORIO (769px+) ===== */
 /* ================================================ */
 @media (min-width: 769px) {
-    
+    /* EJERCICIO 6.2: Background adaptativo para desktop */
+    .hero {
+        background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('https://img.freepik.com/fotos-premium/casa-moderna-lujo-florida-amplia-sala-estar-gran-television-paredes-blancas-ventanas-panoramicas-vistas-piscina_1275033-1450.jpg?semt=ais_hybrid&w=740&q=80');
+        min-height: 500px;
+        padding: 6rem 2rem;
+        background-attachment: fixed;
+    }
+    /* FIN EJERCICIO 6.2 para desktop */
+
     /* ===== NAVBAR (ESCRITORIO) ===== */
     .navbar {
         padding: 1.5rem 3rem;
