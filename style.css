@@ -243,7 +243,7 @@ footer {
 */
 .hero {
     /* Imagen de fondo adaptativa */
-    background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('https://img.freepik.com/fotos-premium/casa-moderna-lujo-florida-amplia-sala-estar-gran-television-paredes-blancas-ventanas-panoramicas-vistas-piscina_1275033-1450.jpg?semt=ais_hybrid&w=740&q=80');
+    background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('images/imagenHero.png');
     
     /* COVER: La imagen cubre todo el contenedor manteniendo proporciones */
     background-size: cover;
@@ -544,7 +544,7 @@ tfoot {
 @media (min-width: 481px) {
     /* EJERCICIO 6.2: Background adaptativo para tablet */
     .hero {
-        background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('https://img.freepik.com/fotos-premium/casa-moderna-lujo-florida-amplia-sala-estar-gran-television-paredes-blancas-ventanas-panoramicas-vistas-piscina_1275033-1450.jpg?semt=ais_hybrid&w=740&q=80');
+        background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('images/imagenHero.png');
         min-height: 400px;
         padding: 4rem 2rem;
     }
@@ -596,7 +596,7 @@ tfoot {
 @media (min-width: 769px) {
     /* EJERCICIO 6.2: Background adaptativo para desktop */
     .hero {
-        background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('https://img.freepik.com/fotos-premium/casa-moderna-lujo-florida-amplia-sala-estar-gran-television-paredes-blancas-ventanas-panoramicas-vistas-piscina_1275033-1450.jpg?semt=ais_hybrid&w=740&q=80');
+        background-image: linear-gradient(rgba(0, 32, 64, 0.85), rgba(90, 108, 125, 0.85)), url('images/imagenHero.png');
         min-height: 500px;
         padding: 6rem 2rem;
         background-attachment: fixed;
