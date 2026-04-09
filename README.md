@@ -498,6 +498,58 @@ El datepicker está configurado con:
 
 ---
 
+# Práctica 13 — Integración de Contenidos Interactivos
+**Módulo:** DAW M09 · Unidad 4  
+**Alumno:** —  
+**Web:** [GitHub Pages URL]
+
+---
+
+## Selectores HTML utilizados para anclar los componentes
+
+| Componente | Selector / ID de anclaje | Descripción |
+|---|---|---|
+| Canvas partículas | `section#inicio.hero` | El `<canvas id="p13-hero-canvas">` se inserta dentro del hero como fondo |
+| Gráfico Chart.js | `<section id="p13-estadisticas">` | Sección nueva insertada entre `#proceso` y `#sobre-nosotros` |
+| Staggering tarjetas | `#servicios .tarjeta` | Las 3 tarjetas de servicios aparecen escalonadas al entrar en viewport |
+| Staggering testimonios | `.testimonios .testimonio` | Los 3 testimonios aparecen escalonados al entrar en viewport |
+| Micro-interacciones | `.tarjeta`, `.testimonio`, `.btn-cta`, `#p13-btn-toggle-chart` | Animaciones de feedback ante mouseenter / mousedown |
+
+---
+
+## Librerías externas (CDN)
+
+| Librería | Versión | URL CDN | Uso |
+|---|---|---|---|
+| **Chart.js** | 4.4.2 | `https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js` | Bloque A — gráfico barras/líneas |
+| **Anime.js** | 3.2.1 | `https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js` | Bloque B — staggering + micro-interacciones |
+| **Canvas API** | nativa | — | Bloque C — partículas con `requestAnimationFrame` |
+
+> Bootstrap 5.3, jQuery 3.7.1 y Font Awesome 6.5.1 ya estaban en el proyecto base.
+
+---
+
+## Estructura de archivos añadidos
+
+```
+/
+├── index.html                          ← modificado (canvas, sección p13, CDNs)
+├── css/
+│   └── interactividad_practica13.css   ← estilos nuevos (prefijo .p13-)
+└── js/
+    └── interactividad_practica13.js    ← todo el JS nuevo (IIFE encapsulado)
+```
+
+---
+
+## Decisiones de diseño
+
+- **Theming coherente:** colores `#D4AF37` (dorado), `#011f3e` (azul marino) y `#5A6C7D` (apoyo) extraídos de las variables CSS del proyecto base.
+- **Canvas:** `pointer-events: none` para que no bloquee la interacción con el hero. El canvas ocupa exactamente el bounding box del hero y se redimensiona con `resize`.
+- **Staggering con IntersectionObserver:** las animaciones de entrada solo se lanzan cuando los elementos son visibles en el viewport, evitando que se disparen antes de que el usuario baje.
+- **Encapsulamiento:** todo el código JS está dentro de un IIFE `(function(){ 'use strict'; ... })()` sin ninguna variable en el scope global.
+- **Prefijo CSS:** todos los selectores nuevos usan el prefijo `.p13-` o el id `#p13-*` para garantizar que no colisionen con los estilos existentes.
+
 ## Autor
 
 **Iker Mozo**  
